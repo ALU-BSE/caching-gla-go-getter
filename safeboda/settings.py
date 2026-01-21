@@ -133,3 +133,18 @@ AUTH_USER_MODEL = 'users.User'
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': []
 # }
+
+
+
+# Cache configuration (Activity 3)
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "TIMEOUT": None,  # We'll control TTL in code with CACHE_TTL
+    }
+}
+
+# Default cache TTL in seconds (e.g., 5 minutes)
+CACHE_TTL = 60 * 5
+
